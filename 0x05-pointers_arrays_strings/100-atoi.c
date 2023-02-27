@@ -1,36 +1,40 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "main.h"
 
-#define PASSWORD_LEN 15
-
-int main(void)
+/**
+ * _atoi - Convert a string to an integer.
+ * @s: The pointer to convert
+ *
+ * Return: A integer
+ */
+int _atoi(char *s)
 {
-	char password[PASSWORD_LEN + 1];
-	int i;
+	int c = 0;
+	unsigned int ni = 0;
+	int min = 1;
+	int isi = 0;
 
-	srand(time(NULL));
-
-	for (i = 0; i < PASSWORD_LEN; i++)
+	while (s[c])
 	{
-		int r = rand() % 62;
-		if (r < 10)
+		if (s[c] == 45)
 		{
-			password[i] = '0' + r;
+			min *= -1;
 		}
 
-		else if (r < 36)
+		while (s[c] >= 48 && s[c] <= 57)
 		{
-			password[i] = 'a' + (r - 10);
+			isi = 1;
+			ni = (ni * 10) + (s[c] - '0');
+			c++;
 		}
 
-		else
+		if (isi == 1)
 		{
-			password[i] = 'A' + (r - 36);
+			break;
 		}
 
+		c++;
 	}
 
-	printf("%s", password);
-	return 0;
+	ni *= min;
+	return (ni);
 }
