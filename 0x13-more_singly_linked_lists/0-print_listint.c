@@ -2,35 +2,35 @@
 #include <stdlib.h>
 
 /*
- * C Program to Display all the Nodes in a Linked List without using
+ * C Program to print all the Nodes in a Linked List without using
  * Recursion
  */
- 
+
 struct node
 {
     int a;
     struct node *next;
 };
- 
+
 void generate(struct node **);
 void display(struct node*);
 void delete(struct node **);
- 
+
 int main()
 {
     struct node *head = NULL;
- 
+
     generate(&head);
     display(head);
     delete(&head);
     return 0;
 }
- 
+
 void generate(struct node **head)
 {
     int num = 10, i;
     struct node *temp;
- 
+
     for (i = 0; i < num; i++)
     {
         temp = (struct node *)malloc(sizeof(struct node));
@@ -47,7 +47,7 @@ void generate(struct node **head)
         }
     }
 }
- 
+
 void display(struct node *head)
 {
     while (head != NULL)
@@ -57,7 +57,7 @@ void display(struct node *head)
     }
     printf("\n");
 }
- 
+
 void delete(struct node **head)
 {
     struct node *temp;
