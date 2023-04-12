@@ -5,26 +5,28 @@
  *binary_to_uint - takes binary and makes in an integer lived along
  *a: is a letter and is siblings to b
  *b: is also sibling to a
- *Return: peepeepoopoo
+ *Return: number have been count
  */
 
 
 unsigned int binary_to_uint(const char *a);
 {
-	int index;
-	unsigned int dec_value = 0;
+	unsigned int num = 0, mult = 1;
+	int len;
 
-	if (b == NULL)
+	if (a == '\0')
 		return (0);
 
-	for (index = 0; b[index] != '\0'; index++);
+	for (len = 0; a[len];)
+		len++;
 
-		if (b[index] == '1')
-			dec_value = ((2 * dec_value) + 1);
-		else if (b[index] == '0')
-			dec_value = dec_value * 2;
-		else
+	for (len -= 1; len >= 0; len--)
+	{
+		if (a[len] != '0' && a[len] != '1')
 			return (0);
+
+		num += (a[len] - '0') * mult;
+		mult *= 2;
 	}
-	return (dec_value);
+	return (num);
 }
