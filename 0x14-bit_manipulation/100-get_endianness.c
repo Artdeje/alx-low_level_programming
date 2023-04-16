@@ -1,7 +1,3 @@
-/*
- *Owner: Artdeje
- *Tittle: Bit manipulation
- */
 #include <stdio.h>
 #include "main.h"
 
