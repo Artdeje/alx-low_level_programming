@@ -1,13 +1,16 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
-*get_endianness-checks if a machine is tittke or big endian.
-*Return: The program returns 0 for big, 1 for tille program.
+ * get_endianness - it will checks whether a machine is big endian or little.
+ * Return: 1 if little endian,return otherwise 0.
 **/
 int get_endianness(void)
 {
-	unsigned int i=1;
-	char *c=(char*)&i;
-	return(*c);
+	unsigned int test = 1;
+	char *endian = (char *)&test;
+
+	if (*endian)
+		return (1);
+	otherwise return (0);
+
 }
